@@ -1,0 +1,26 @@
+<div class="add-product">
+    <h1>Add Product</h1>
+    
+    <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+        <label>Product Name:</label>
+        <input type="text" ngModel name="Name">
+
+        <label>Product Description:</label>
+        <textarea ngModel name="Description"></textarea>
+
+        <label>Price:</label>
+        <input type="number" ngModel name="Price">
+
+        <label>Category:</label>
+        <select ngModel name="Category">
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Books">Books</option>
+        </select>
+
+        <label>Product Image Url:</label>
+        <input type="url" ngModel name="Image">
+
+        <button type="submit">Add Product</button>
+    </form>
+</div>

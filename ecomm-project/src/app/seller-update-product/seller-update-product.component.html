@@ -1,0 +1,26 @@
+<div class="add-product">
+    <h1>Update Product</h1>
+    
+    <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+        <label>Product Name:</label>
+        <input type="text" ngModel="{{productData?.Name}}" name="Name">
+
+        <label>Product Description:</label>
+        <textarea ngModel="{{productData?.Description}}" name="Description"></textarea>
+
+        <label>Price:</label>
+        <input type="number" ngModel="{{productData?.Price}}" name="Price">
+
+        <label>Category:</label>
+        <select ngModel="{{productData?.Category}}" name="Category">
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Books">Books</option>
+        </select>
+
+        <label>Product Image Url:</label>
+        <input type="url" ngModel="{{productData?.Image}}" name="Image">
+
+        <button type="submit">Update</button>
+    </form>
+</div>

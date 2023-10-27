@@ -1,0 +1,38 @@
+<!-- signup-form -->
+<div *ngIf="!showLogin" class="signup-container">
+    <h1>Sign-Up</h1>
+    <form #SignUpForm="ngForm" (ngSubmit)="SignUp(SignUpForm.value)">
+        <div class="form-group">
+            <input type="text" ngModel name="name" placeholder="Enter Name" #name="ngModel" required>
+            <p *ngIf="name.invalid && name.touched">Please enter name !.</p>
+        </div>
+        <div class="form-group">
+            <input type="text" ngModel name="email" placeholder="Enter Email" #email="ngModel" required email>
+            <p *ngIf="email.invalid && email.touched">Please enter valid email !.</p>
+        </div>
+        <div class="form-group">
+            <input type="password" ngModel name="password" placeholder="Enter Password" #password="ngModel" required minlength="4" maxlength="15">
+            <p *ngIf="password.invalid && password.touched">Please enter valid password !.</p>
+        </div>
+        <button [disabled]="SignUpForm.invalid" class="signup-button">Sign Up</button>
+    </form>
+    <p>Already have an account? <a (click)="openLogin()">Login</a></p>
+</div>
+
+
+<!-- login-form -->
+<div *ngIf="showLogin" class="signup-container">
+    <h1>Login</h1>
+    <form #LoginForm="ngForm" (ngSubmit)="Login(LoginForm.value)">
+        <div class="form-group">
+            <input type="text" ngModel name="email" placeholder="Enter Email" #email="ngModel" required email>
+            <p *ngIf="email.invalid && email.touched">Please enter valid email !.</p>
+        </div>
+        <div class="form-group">
+            <input type="password" ngModel name="password" placeholder="Enter Password" #password="ngModel" required minlength="4" maxlength="15">
+            <p *ngIf="password.invalid && password.touched">Please enter valid password !.</p>
+        </div>
+        <button [disabled]="LoginForm.invalid" class="signup-button">Login</button>
+    </form>
+    <p>Don't have an account? <a (click)="openSignUp()">SignUp</a></p>
+</div>

@@ -1,0 +1,28 @@
+<body>
+  <div id="slideshow">
+    <img [src]="imagedata[currentIndex]" />
+  </div>
+  
+  <div class="product-list">
+    <h1>Product List</h1>
+    <div class="product-area">
+      <div class="product-card" *ngFor="let product of productData">
+        <img [src]="product.Image">
+        <h3>{{ product.Name }}</h3>
+        <p class="desc"><strong>Description:</strong> {{ product.Description }}</p>
+        <p><strong>Price:</strong> ${{ product.Price }}</p>
+        <p><strong>Category:</strong> {{ product.Category }}</p>
+  
+        <button>Add to Cart</button>
+        <button class="buy">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 Your E-commerce Store</p>
+      </div>
+  </footer>
+    
+</body>
